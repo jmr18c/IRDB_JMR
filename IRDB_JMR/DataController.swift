@@ -30,17 +30,17 @@ class DataController: NSObject {
                 
                 self.dataModel = thisMediaData
                 print(thisMediaData.franchise[0])
+                
+                // Call back to the completionHandlelr and let em know we done
+                
+                // Go back to the main thread
+                DispatchQueue.main.async {
+                    // Whatever BRO
+                    completion(self.dataModel!)
+                }
             }
             catch let err {
                 print("ERROR WAS: ", err)
-            }
-            
-            // Call back to the completionHandlelr and let em know we done
-            
-            // Go back to the main thread
-            DispatchQueue.main.async {
-                // Whatever BRO
-                completion(self.dataModel!)
             }
         }
         dataTask.resume()
