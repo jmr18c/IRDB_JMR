@@ -47,6 +47,7 @@ class DetailViewController: UIViewController {
             // Image from URL
             if let thisMediaImage = mediaImage {
                 // DO STUFF
+                //thisMediaImage.setImage(from: entry.imageURL)
             }
             // Title Label
             if let thisTitleLabel = titleLabel {
@@ -57,7 +58,11 @@ class DetailViewController: UIViewController {
                 thisYearLabel.text = entry.yearStart
                 // If it has an end year add it to the end
                 if entry.yearEnd != nil {
-                    thisYearLabel.text! += "-\(entry.yearEnd ?? "")"
+                    if entry.yearEnd == " - " {
+                        thisYearLabel.text! += "-Present"
+                    } else {
+                        thisYearLabel.text! += "-\(entry.yearEnd ?? "")"
+                    }
                 }
             }
             // Format of Production Label
@@ -68,7 +73,11 @@ class DetailViewController: UIViewController {
             if let thisEpisodeLabel = episodeLabel {
                 if let episodeCount = entry.episodes {
                     // IF there is only 1 episode take that "s" off
-                    thisEpisodeLabel.text = "\(episodeCount) Episodes"
+                    if entry.episodes! == 1 {
+                        thisEpisodeLabel.text = "\(episodeCount) Episode"
+                    } else {
+                        thisEpisodeLabel.text = "\(episodeCount) Episodes"
+                    }
                 } else {
                     thisEpisodeLabel.text = ""
                 }
@@ -101,7 +110,7 @@ class DetailViewController: UIViewController {
         
         if segue.identifier == "showCastList" {
             
-                let controller = segue.destination as! CastTableViewController
+            let controller = segue.destination as! CastTableViewController
             controller.castListArray = detailItem?.starring
         }
     }

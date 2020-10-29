@@ -30,9 +30,9 @@ class CastTableViewController: UITableViewController {
         
         
         // Configure the cell...
-        cell.textLabel?.text = "Title" //mediaModel?.franchise[indexPath.section].entries[indexPath.row].name
+        cell.textLabel?.text = castListArray?[indexPath.row].actorName
 
-        cell.detailTextLabel?.text = "Detail" //mediaModel?.franchise[indexPath.section].entries[indexPath.row].yearStart
+        cell.detailTextLabel?.text = "AS: " + (castListArray?[indexPath.row].role)!
         
         return cell
     }
