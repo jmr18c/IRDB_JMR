@@ -27,10 +27,13 @@ class CastTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "castCell", for: indexPath)
 
-        // Configure the cell...
         
-        // Use the values in the array to make cast list cell pretty
+        
+        // Configure the cell...
+        cell.textLabel?.text = "Title" //mediaModel?.franchise[indexPath.section].entries[indexPath.row].name
 
+        cell.detailTextLabel?.text = "Detail" //mediaModel?.franchise[indexPath.section].entries[indexPath.row].yearStart
+        
         return cell
     }
 
