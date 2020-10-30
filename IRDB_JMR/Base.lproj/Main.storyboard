@@ -121,8 +121,8 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Episode Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="g9W-1d-4qR">
-                                        <rect key="frame" x="283" y="98.5" width="123" height="29"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Episode Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="g9W-1d-4qR">
+                                        <rect key="frame" x="283" y="133" width="123" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -133,8 +133,8 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Year Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ER3-kr-oZw">
-                                        <rect key="frame" x="180" y="54.5" width="226" height="29"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Year Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ER3-kr-oZw">
+                                        <rect key="frame" x="180" y="101" width="226" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -142,27 +142,26 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="ed0-b0-HrA" firstAttribute="top" relation="greaterThanOrEqual" secondItem="gXT-zC-EeT" secondAttribute="bottom" constant="8" id="1gu-NY-xJH"/>
+                                    <constraint firstItem="ed0-b0-HrA" firstAttribute="top" secondItem="gXT-zC-EeT" secondAttribute="bottom" constant="8" id="1gu-NY-xJH"/>
                                     <constraint firstAttribute="height" constant="256" id="2x6-ig-KuA"/>
                                     <constraint firstItem="lHa-2S-O34" firstAttribute="top" secondItem="Uun-k4-3v9" secondAttribute="top" constant="8" id="EvH-gI-tXs"/>
-                                    <constraint firstItem="ed0-b0-HrA" firstAttribute="top" relation="greaterThanOrEqual" secondItem="g9W-1d-4qR" secondAttribute="bottom" constant="8" id="H3C-3d-F7s"/>
+                                    <constraint firstItem="ed0-b0-HrA" firstAttribute="top" secondItem="g9W-1d-4qR" secondAttribute="bottom" constant="8" id="H3C-3d-F7s"/>
                                     <constraint firstAttribute="trailing" secondItem="nUn-6X-1lv" secondAttribute="trailing" constant="8" id="Hqe-lp-gdd"/>
                                     <constraint firstAttribute="bottom" secondItem="nUn-6X-1lv" secondAttribute="bottom" constant="8" id="LGp-E6-oTM"/>
                                     <constraint firstItem="nUn-6X-1lv" firstAttribute="top" secondItem="ed0-b0-HrA" secondAttribute="bottom" constant="8" id="QhJ-81-576"/>
                                     <constraint firstAttribute="trailing" secondItem="ed0-b0-HrA" secondAttribute="trailing" constant="8" id="SAq-j1-fdl"/>
                                     <constraint firstItem="qoN-G8-B1B" firstAttribute="top" secondItem="Uun-k4-3v9" secondAttribute="top" constant="8" id="Uks-B5-eXq"/>
                                     <constraint firstItem="gXT-zC-EeT" firstAttribute="leading" secondItem="lHa-2S-O34" secondAttribute="trailing" constant="8" id="XfD-jn-XB5"/>
-                                    <constraint firstItem="g9W-1d-4qR" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ER3-kr-oZw" secondAttribute="bottom" constant="8" id="Y2h-sG-bUw"/>
+                                    <constraint firstItem="g9W-1d-4qR" firstAttribute="top" secondItem="ER3-kr-oZw" secondAttribute="bottom" constant="8" id="Y2h-sG-bUw"/>
                                     <constraint firstItem="ed0-b0-HrA" firstAttribute="leading" secondItem="lHa-2S-O34" secondAttribute="trailing" constant="8" id="cUt-Sy-1Da"/>
                                     <constraint firstItem="ER3-kr-oZw" firstAttribute="leading" secondItem="lHa-2S-O34" secondAttribute="trailing" constant="8" id="dDH-4h-7ih"/>
                                     <constraint firstItem="qoN-G8-B1B" firstAttribute="leading" secondItem="lHa-2S-O34" secondAttribute="trailing" constant="8" id="erv-gS-JGv"/>
                                     <constraint firstItem="lHa-2S-O34" firstAttribute="leading" secondItem="Uun-k4-3v9" secondAttribute="leading" constant="8" id="iK5-9l-Dmx"/>
-                                    <constraint firstItem="gXT-zC-EeT" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ER3-kr-oZw" secondAttribute="bottom" constant="8" id="jIp-JW-b7t"/>
+                                    <constraint firstItem="gXT-zC-EeT" firstAttribute="top" secondItem="ER3-kr-oZw" secondAttribute="bottom" constant="8" id="jIp-JW-b7t"/>
                                     <constraint firstAttribute="trailing" secondItem="g9W-1d-4qR" secondAttribute="trailing" constant="8" id="ncK-XM-axE"/>
                                     <constraint firstAttribute="trailing" secondItem="ER3-kr-oZw" secondAttribute="trailing" constant="8" id="nlz-Jp-edC"/>
                                     <constraint firstAttribute="trailing" secondItem="qoN-G8-B1B" secondAttribute="trailing" constant="8" id="r1u-if-4zd"/>
                                     <constraint firstAttribute="bottom" secondItem="lHa-2S-O34" secondAttribute="bottom" constant="8" id="trQ-Lh-I55"/>
-                                    <constraint firstItem="ER3-kr-oZw" firstAttribute="top" relation="greaterThanOrEqual" secondItem="qoN-G8-B1B" secondAttribute="bottom" constant="8" id="uva-tk-1rt"/>
                                     <constraint firstItem="nUn-6X-1lv" firstAttribute="leading" secondItem="lHa-2S-O34" secondAttribute="trailing" constant="8" id="vBx-Bl-H3r"/>
                                 </constraints>
                             </view>
