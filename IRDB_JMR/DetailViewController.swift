@@ -29,12 +29,11 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        title = detailItem?.name
+        
         let nav = self.navigationController?.navigationBar
           
-        nav?.barStyle = UIBarStyle.black
-        nav?.tintColor = UIColor.init(red: 245/255, green: 196/255, blue: 72/255, alpha: 1)
-        
-        title = detailItem?.name
+        nav?.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.init(red: 245/255, green: 196/255, blue: 72/255, alpha: 1)]
         
         configureView()
     }
@@ -47,7 +46,9 @@ class DetailViewController: UIViewController {
             // Image from URL
             if let thisMediaImage = mediaImage {
                 // DO STUFF
-                //thisMediaImage.setImage(from: entry.imageURL)
+                let url = URL(string: entry.imageURL)
+                let data = try? Data(contentsOf: url!)
+                thisMediaImage.image = UIImage(data: data!)
             }
             // Title Label
             if let thisTitleLabel = titleLabel {

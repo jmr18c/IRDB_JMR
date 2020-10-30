@@ -10,11 +10,12 @@ import UIKit
 class CastTableViewController: UITableViewController {
     
     var castListArray: [Cast]?
+    var detailItem: Entry?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        title = "Cast List"
     }
 
     // MARK: - Table view data source
@@ -26,13 +27,11 @@ class CastTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "castCell", for: indexPath)
-
-        
         
         // Configure the cell...
-        cell.textLabel?.text = castListArray?[indexPath.row].actorName
+        cell.textLabel?.text = (castListArray?[indexPath.row].actorName)! + " -as- "
 
-        cell.detailTextLabel?.text = "AS: " + (castListArray?[indexPath.row].role)!
+        cell.detailTextLabel?.text = castListArray?[indexPath.row].role
         
         return cell
     }

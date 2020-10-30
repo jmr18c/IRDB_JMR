@@ -224,7 +224,7 @@
             </objects>
             <point key="canvasLocation" x="1257.9710144927537" y="133.92857142857142"/>
         </scene>
-        <!--Cast Table View Controller-->
+        <!--Cast List-->
         <scene sceneID="2zU-bT-s4Z">
             <objects>
                 <tableViewController id="u6B-lc-nKu" customClass="CastTableViewController" customModule="IRDB_JMR" customModuleProvider="target" sceneMemberID="viewController">
@@ -263,7 +263,7 @@
                             <outlet property="delegate" destination="u6B-lc-nKu" id="UYa-g3-mtI"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="QPR-Ds-6TO"/>
+                    <navigationItem key="navigationItem" title="Cast List" id="QPR-Ds-6TO"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kPP-qa-bJE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
