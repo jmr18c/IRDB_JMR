@@ -9,16 +9,17 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
-    @IBOutlet var mediaImage: UIImageView!
-    @IBOutlet var titleLabel: UILabel!
-    @IBOutlet var yearLabel: UILabel!
-    @IBOutlet var formatLabel: UILabel!
-    @IBOutlet var episodeLabel: UILabel!
-    @IBOutlet var studioLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var summaryTextView: UITextView!
+    @IBOutlet var logoImage: UIImageView!
+    @IBOutlet var teamNameLabel: UILabel!
+    @IBOutlet var prevRecordLabel: UILabel!
+    @IBOutlet var prevFinishLabel: UILabel!
+    @IBOutlet var ownerLabel: UILabel!
+    @IBOutlet var draftSpotLabel: UILabel!
+    @IBOutlet var draftGradeLabel: UILabel!
+    @IBOutlet var projFinishLabel: UILabel!
+    @IBOutlet weak var draftSummaryTextView: UITextView!
     
-    var detailItem: Entry? {
+    var detailItem: Teams? {
         didSet {
             // Update the view
             configureView()
@@ -29,7 +30,7 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        title = detailItem?.name
+        title = detailItem?.teamName
         
         let nav = self.navigationController?.navigationBar
           
@@ -40,63 +41,49 @@ class DetailViewController: UIViewController {
 
     func configureView() {
         
-        if let entry = detailItem {
+        if let teams = detailItem {
             // Header View
             
             // Image from URL
-            if let thisMediaImage = mediaImage {
+            if let thisLogoImage = logoImage {
                 // DO STUFF
-                let url = URL(string: entry.imageURL)
+                let url = URL(string: teams.logoURL)
                 let data = try? Data(contentsOf: url!)
-                thisMediaImage.image = UIImage(data: data!)
+                thisLogoImage.image = UIImage(data: data!)
             }
             // Title Label
-            if let thisTitleLabel = titleLabel {
-                thisTitleLabel.text = entry.name
+            if let thisTeamNameLabel = teamNameLabel {
+                thisTeamNameLabel.text = teams.teamName
             }
             // Year Label
-            if let thisYearLabel = yearLabel {
-                thisYearLabel.text = entry.yearStart
-                // If it has an end year add it to the end
-                if entry.yearEnd != nil {
-                    if entry.yearEnd == " - " {
-                        thisYearLabel.text! += "-Present"
-                    } else {
-                        thisYearLabel.text! += "-\(entry.yearEnd ?? "")"
-                    }
-                }
+            if let thisPrevRecordLabel = prevRecordLabel {
+                thisPrevRecordLabel.text = teams.prevYrRecord
+            }
+            // Year Label
+            if let thisPrevFinishLabel = prevFinishLabel {
+                thisPrevFinishLabel.text = teams.prevYrFinish
             }
             // Format of Production Label
-            if let thisFormatLabel = formatLabel {
-                thisFormatLabel.text = entry.format
+            if let thisOwnerLabel = ownerLabel {
+                thisOwnerLabel.text = teams.owner
             }
             // Episodes Label
-            if let thisEpisodeLabel = episodeLabel {
-                if let episodeCount = entry.episodes {
-                    // IF there is only 1 episode take that "s" off
-                    if entry.episodes! == 1 {
-                        thisEpisodeLabel.text = "\(episodeCount) Episode"
-                    } else {
-                        thisEpisodeLabel.text = "\(episodeCount) Episodes"
-                    }
-                } else {
-                    thisEpisodeLabel.text = ""
-                }
+            if let thisDraftSpotLabel = draftSpotLabel {
+                thisDraftSpotLabel.text = "Pick: \(teams.draftSpot)"
             }
             // Studio Label
-            if let thisStudioLabel = studioLabel {
-                thisStudioLabel.text = entry.studio
+            if let thisDraftGradeLabel = draftGradeLabel {
+                thisDraftGradeLabel.text = teams.draftGrade
+            }
+            // Description Label
+            if let thisProjFinishLabel = projFinishLabel {
+                thisProjFinishLabel.text = teams.projFinish
             }
             
             // Bottom View
-            
-            // Description Label
-            if let thisDescriptionLabel = descriptionLabel {
-                thisDescriptionLabel.text = entry.description
-            }
             // Summary Text
-            if let thisSummaryTextView = summaryTextView {
-                thisSummaryTextView.text = entry.summary
+            if let thisDraftSummaryTextView = draftSummaryTextView {
+                thisDraftSummaryTextView.text = teams.draftSummary
             }
         }
         
@@ -109,10 +96,10 @@ class DetailViewController: UIViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
         
-        if segue.identifier == "showCastList" {
+        if segue.identifier == "showPicksList" {
             
-            let controller = segue.destination as! CastTableViewController
-            controller.castListArray = detailItem?.starring
+            let controller = segue.destination as! PicksTableViewController
+            controller.pickListArray = detailItem?.picks
         }
     }
 }

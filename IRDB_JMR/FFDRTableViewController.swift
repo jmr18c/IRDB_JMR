@@ -7,9 +7,9 @@
 
 import UIKit
 
-class IRDBTableViewController: UITableViewController {
+class FFDRTableViewController: UITableViewController {
 
-    var mediaModel: MediaDataModel? {
+    var draftModel: DraftDataModel? {
         didSet {
             tableView.reloadData()
         }
@@ -26,7 +26,7 @@ class IRDBTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
-        title = "IRDb"
+        title = "FFDR"
         
         // 1
         let nav = self.navigationController?.navigationBar
@@ -48,14 +48,14 @@ class IRDBTableViewController: UITableViewController {
         
         // Call dataController and then wait
         dataController.getJSONData(completion: {dataModel in
-            self.mediaModel = dataModel
+            self.draftModel = dataModel
         })
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return mediaModel?.franchise.count ?? 0
+        return draftModel?.draftRecap.count ?? 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -86,9 +86,9 @@ class IRDBTableViewController: UITableViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
         
-        if segue.identifier == "showMediaDetail" {
+        if segue.identifier == "showDraftDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
-                let selectedObject = mediaModel!.franchise[indexPath.section].entries[indexPath.row]
+                let selectedObject = mediaModel!.draftRecap[indexPath.section].entries[indexPath.row]
                 let controller = segue.destination as! DetailViewController
                 controller.detailItem = selectedObject
             }

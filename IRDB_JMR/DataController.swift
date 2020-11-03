@@ -9,11 +9,11 @@ import UIKit
 
 class DataController: NSObject {
 
-    let JSONURL = "https://api.jsonbin.io/b/5eb061a247a2266b1472bcf9/1"
+    let JSONURL = "https://api.jsonbin.io/b/5fa1db45a03d4a3bab0c60b2"
     
-    var dataModel: MediaDataModel?
+    var dataModel: DraftDataModel?
     
-    func getJSONData(completion: @escaping (_ dataModel: MediaDataModel) -> ()) {
+    func getJSONData(completion: @escaping (_ dataModel: DraftDataModel) -> ()) {
         
         let jsonUrl = URL(string: JSONURL)
         
@@ -26,10 +26,10 @@ class DataController: NSObject {
             
             do {
                 let decoder = JSONDecoder()
-                let thisMediaData = try decoder.decode(MediaDataModel.self, from: thisData)
+                let thisDraftData = try decoder.decode(DraftDataModel.self, from: thisData)
                 
-                self.dataModel = thisMediaData
-                print(thisMediaData.franchise[0])
+                self.dataModel = thisDraftData
+                print(thisDraftData.draftRecap[0])
                 
                 // Call back to the completionHandlelr and let em know we done
                 
