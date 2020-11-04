@@ -26,10 +26,10 @@ class PicksTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "castCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "pickCell", for: indexPath)
         
         // Configure the cell...
-        cell.textLabel?.text = (pickListArray?[indexPath.row].playerName)! + " -as- "
+        cell.textLabel?.text = pickListArray?[indexPath.row].playerName
 
         cell.detailTextLabel?.text = pickListArray?[indexPath.row].pickNum
         

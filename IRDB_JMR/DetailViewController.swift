@@ -57,33 +57,33 @@ class DetailViewController: UIViewController {
             }
             // Year Label
             if let thisPrevRecordLabel = prevRecordLabel {
-                thisPrevRecordLabel.text = teams.prevYrRecord
+                thisPrevRecordLabel.text = "2019 Record: \(teams.prevYrRecord)"
             }
             // Year Label
             if let thisPrevFinishLabel = prevFinishLabel {
-                thisPrevFinishLabel.text = teams.prevYrFinish
+                thisPrevFinishLabel.text = "2019 Place: \(teams.prevYrFinish)"
             }
             // Format of Production Label
             if let thisOwnerLabel = ownerLabel {
-                thisOwnerLabel.text = teams.owner
+                thisOwnerLabel.text = "Owner: \(teams.owner)"
             }
             // Episodes Label
             if let thisDraftSpotLabel = draftSpotLabel {
-                thisDraftSpotLabel.text = "Pick: \(teams.draftSpot)"
+                thisDraftSpotLabel.text = "Pick Number: \(teams.draftSpot)"
             }
             // Studio Label
             if let thisDraftGradeLabel = draftGradeLabel {
-                thisDraftGradeLabel.text = teams.draftGrade
+                thisDraftGradeLabel.text = "Draft Grade: \(teams.draftGrade)"
             }
             // Description Label
             if let thisProjFinishLabel = projFinishLabel {
-                thisProjFinishLabel.text = teams.projFinish
+                thisProjFinishLabel.text = "2020 Projected: \(teams.projFinish)"
             }
             
             // Bottom View
             // Summary Text
             if let thisDraftSummaryTextView = draftSummaryTextView {
-                thisDraftSummaryTextView.text = teams.draftSummary
+                thisDraftSummaryTextView.text = "Draft Summary:\n\(teams.draftSummary)"
             }
         }
         

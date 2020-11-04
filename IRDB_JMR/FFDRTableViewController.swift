@@ -40,7 +40,7 @@ class FFDRTableViewController: UITableViewController {
         imageView.contentMode = .scaleAspectFit
               
         // 4
-        let image = UIImage(named: "irdblogo")
+        let image = UIImage(named: "espn_fantasy_football")
         imageView.image = image
               
         // 5
@@ -59,11 +59,11 @@ class FFDRTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return mediaModel?.franchise[section].entries.count ?? 0
+        return draftModel?.draftRecap[section].teamEntries.count ?? 0
     }
 
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return mediaModel?.franchise[section].franchiseName
+        return draftModel?.draftRecap[section].header
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -72,9 +72,9 @@ class FFDRTableViewController: UITableViewController {
         
         
         // Configure the cell...
-        cell.textLabel?.text = mediaModel?.franchise[indexPath.section].entries[indexPath.row].name
+        cell.textLabel?.text = draftModel?.draftRecap[indexPath.section].teamEntries[indexPath.row].teamName
 
-        cell.detailTextLabel?.text = mediaModel?.franchise[indexPath.section].entries[indexPath.row].yearStart
+        cell.detailTextLabel?.text = "\(String(describing: draftModel?.draftRecap[indexPath.section].teamEntries[indexPath.row].draftSpot))"
         
         return cell
     }
@@ -88,7 +88,7 @@ class FFDRTableViewController: UITableViewController {
         
         if segue.identifier == "showDraftDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
-                let selectedObject = mediaModel!.draftRecap[indexPath.section].entries[indexPath.row]
+                let selectedObject = draftModel!.draftRecap[indexPath.section].teamEntries[indexPath.row]
                 let controller = segue.destination as! DetailViewController
                 controller.detailItem = selectedObject
             }
