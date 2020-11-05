@@ -9,7 +9,7 @@ import UIKit
 
 class DataController: NSObject {
 
-    let JSONURL = "https://api.jsonbin.io/b/5fa1db45a03d4a3bab0c60b2/3"
+    let JSONURL = "https://api.jsonbin.io/b/5fa1db45a03d4a3bab0c60b2/4"
     
     var dataModel: DraftDataModel?
     
