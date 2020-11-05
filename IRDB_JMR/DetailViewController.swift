@@ -34,7 +34,7 @@ class DetailViewController: UIViewController {
         
         let nav = self.navigationController?.navigationBar
           
-        nav?.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.init(red: 245/255, green: 196/255, blue: 72/255, alpha: 1)]
+        nav?.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.init(red: 36/255, green: 178/255, blue: 75/255, alpha: 1)]
         
         configureView()
     }
@@ -83,7 +83,7 @@ class DetailViewController: UIViewController {
             // Bottom View
             // Summary Text
             if let thisDraftSummaryTextView = draftSummaryTextView {
-                thisDraftSummaryTextView.text = "Draft Summary:\n\(teams.draftSummary)"
+                thisDraftSummaryTextView.text = "Draft Summary:\n\(teams.draftSummary)\n\nProduced by: The Average Pros Podcast"
             }
         }
         
